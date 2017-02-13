@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.EmpInfo" table="emp_info" catalog="employee_management_db" optimistic-lock="version">
+        <id name="empId" type="string">
+            <column name="emp_id" length="9" />
+            <generator class="assigned" />
+        </id>
+        <property name="firstname" type="string">
+            <column name="firstname" length="45" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="45" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="45" />
+        </property>
+        <property name="jobTitle" type="string">
+            <column name="job_title" length="45" />
+        </property>
+        <property name="department" type="string">
+            <column name="department" length="45" />
+        </property>
+        <property name="dob" type="date">
+            <column name="dob" length="10" not-null="true" />
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" unique="true" />
+        </property>
+        <property name="contact" type="string">
+            <column name="contact" length="45" unique="true" />
+        </property>
+        <property name="mailAddress" type="string">
+            <column name="mail_address" length="550" />
+        </property>
+        <set name="salaryInfos" table="salary_info" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" />
+            </key>
+            <one-to-many class="com.pojo.SalaryInfo" />
+        </set>
+        <set name="extraActivityTables" table="extra_activity_table" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" not-null="true" />
+            </key>
+            <one-to-many class="com.pojo.ExtraActivityTable" />
+        </set>
+        <set name="performanceTables" table="performance_table" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" />
+            </key>
+            <one-to-many class="com.pojo.PerformanceTable" />
+        </set>
+        <one-to-one name="familyInfo" class="com.pojo.FamilyInfo"></one-to-one>
+        <set name="leaveInfos" table="leave_info" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" />
+            </key>
+            <one-to-many class="com.pojo.LeaveInfo" />
+        </set>
+        <set name="taskTables" table="task_table" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" />
+            </key>
+            <one-to-many class="com.pojo.TaskTable" />
+        </set>
+        <set name="promotiomTables" table="promotiom_table" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="emp_id" length="9" />
+            </key>
+            <one-to-many class="com.pojo.PromotiomTable" />
+        </set>
+    </class>
+</hibernate-mapping>

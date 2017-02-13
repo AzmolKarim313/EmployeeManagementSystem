@@ -1,0 +1,46 @@
+.header{
+    background-image: url(images/bgBanner.jpg);
+    background-size: 100% 300px;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-top: -20px;
+    /*font-weight: bold;*/
+}
+
+.header-title{
+    margin-top: 100px;
+}
+
+.context-title{
+    background: repeating-linear-gradient(
+        45deg,
+        #606dbc,
+        #606dbc 10px,
+        #465298 10px,
+        #465298 20px
+        );
+    border-radius: 5px 20px 5px;
+    padding: 10px 10px;
+    /*font-weight: bold;*/
+    color: #fff;
+}
+
+.calender-cus input{
+    border: none;
+    margin: -6px -12px;
+    width: 104%;
+}
+
+.head-title-bgc{
+    background: rgba(224, 153, 150, 0.3);
+}
+
+.thead-inverse th{
+    color: #fff;
+    background-color: #373a3c
+}
+
+.info-panel{
+    margin: 30px 0px;
+    padding: 30px;
+}

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <!--CSS-->
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-dropdownhover.min.css"/>
+        <h:outputStylesheet library="css" name="animate.min.css"/>
+        <!--<h:outputStylesheet library="css" name="font-awesome.css"/>-->
+
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+              rel="stylesheet"  type="text/css"/>
+
+        <!--CSS Customize-->
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <!--jQuery-->
+        <!--<h:outputScript library="js" name="jquery.min.js"/>-->
+
+        <!--JS-->
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+        <h:outputScript library="js" name="bootstrap-dropdownhover.min.js"/>
+
+    </h:head>
+    <h:body style="background-color: rgba(167, 255, 255, 0.55);">
+        <div>
+            <nav class = "navbar navbar-inverse" role = "navigation">
+
+                <div class = "navbar-header">
+                    <button type = "button" class = "navbar-toggle" 
+                            data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                        <span class = "sr-only">Toggle navigation</span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                    </button>
+
+                    <a class = "navbar-brand" href = "index.xhtml"><i class="fa fa-home fa-"></i></a>
+                </div>
+
+                <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "index.xhtml">Home</a></li>
+                        <li class = "dropdown active">
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                <i class="fa fa-user" aria-hidden="true"></i> Administration Menu 
+                                <b class = "caret"></b>
+                            </a>
+
+                            <ul class = "dropdown-menu">
+                                <li><a href = "adminAddEmployee.xhtml">Add Employee</a></li>
+                                <li><a href = "adminManupulateDignation.xhtml">Designation Manipulation</a></li>
+                                <li><a href = "adminAddEmployeeTask.xhtml">Add Task</a></li>
+                                <li><a href = "adminAddEmployeeWorkReport.xhtml">Check Work Report</a></li>
+                                <li><a href = "adminEmployeeLeaveRequirment.xhtml">Add/Remove Leave</a></li>
+                                <li><a href = "adminAddAnnouncement.xhtml">Add Announcement/Notes</a></li>
+                                <li><a href = "adminEmployeePayroll.xhtml">View/Edit Payroll</a></li>
+                                <li><a href = "adminSearchEmployee.xhtml">Search Employee Information</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a href = "aboutUsPage.xhtml">About Us</a></li>
+                        <li><a href = "contactUsPage.xhtml">Contact</a></li>
+                    </ul>
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li><a href = "logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="container">
+            <div class="col-md-6">
+                <h:form>
+                    <div class="panel info-panel" style="border-top-left-radius: 50px; border-bottom-right-radius: 50px;">
+                        <h3 class="panel-heading head-title-bgc">Leave Information</h3>
+                        <div class="form-group">
+                            <p:outputLabel class="control-label" value="Employee ID"/>
+                            <h:selectOneMenu class="form-control"  value="#{employeeMB.empInfo.empId}" style="width:100%">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItems value="#{employeeMB.empAllId}"/>
+                                <f:ajax event="change" execute="@this" render="empName empDep empJob" listener="#{employeeMB.fullInfoById()}"/>
+                            </h:selectOneMenu>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="control-label" value="Purpose Of Leave"/>
+                            <h:selectOneMenu class="form-control"  value="" style="width:100%">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Illness" itemValue="Illness" />
+                                <f:selectItem itemLabel="Famili-purpose" itemValue="Famili-purpose" />
+                                <f:selectItem itemLabel="Marriage" itemValue="Marriage" />
+                            </h:selectOneMenu>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="control-label" value="Starting Date"/>
+                            <p:calendar class="form-control calender-cus" pattern="dd-MMM-yyyy"/>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="control-label" value="Ending Date"/>
+                            <p:calendar class="form-control calender-cus" pattern="dd-MMM-yyyy"/>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="control-label" value="No. of Days" />
+                            <p:inputText class="form-control" value="3" readonly="true"/>
+                        </div>
+
+                        <div class="form-group">
+                            <p:selectOneButton  value="">
+                                <f:selectItem itemLabel="Granted" itemValue="Granted" />
+                                <f:selectItem itemLabel="Pending" itemValue="Granted" />
+                                <f:selectItem itemLabel="Reject" itemValue="Granted" />
+                            </p:selectOneButton>
+                        </div>
+                        
+                        <p:commandButton class="btn btn-info" value="Submit"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+

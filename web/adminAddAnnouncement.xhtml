@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <!--CSS-->
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-dropdownhover.min.css"/>
+        <h:outputStylesheet library="css" name="animate.min.css"/>
+        <!--<h:outputStylesheet library="css" name="font-awesome.css"/>-->
+
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+              rel="stylesheet"  type="text/css"/>
+
+        <!--CSS Customize-->
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <!--jQuery-->
+        <h:outputScript library="js" name="jquery.min.js"/>
+
+        <!--JS-->
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+        <h:outputScript library="js" name="bootstrap-dropdownhover.min.js"/>
+
+    </h:head>
+    <h:body style="background: rgba(102, 92, 146, 0.3);">
+        <div>
+            <nav class = "navbar navbar-inverse" role = "navigation">
+
+                <div class = "navbar-header">
+                    <button type = "button" class = "navbar-toggle" 
+                            data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                        <span class = "sr-only">Toggle navigation</span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                    </button>
+
+                    <a class = "navbar-brand" href = "index.xhtml"><i class="fa fa-home fa-"></i></a>
+                </div>
+
+                <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "index.xhtml">Home</a></li>
+                        <li class = "dropdown active">
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                <i class="fa fa-user" aria-hidden="true"></i> Administration Menu 
+                                <b class = "caret"></b>
+                            </a>
+
+                            <ul class = "dropdown-menu">
+                                <li><a href = "adminAddEmployee.xhtml">Add Employee</a></li>
+                                <li><a href = "adminManupulateDignation.xhtml">Designation Manipulation</a></li>
+                                <li><a href = "adminAddEmployeeTask.xhtml">Add Task</a></li>
+                                <li><a href = "adminAddEmployeeWorkReport.xhtml">Check Work Report</a></li>
+                                <li><a href = "adminEmployeeLeaveRequirment.xhtml">Add/Remove Leave</a></li>
+                                <li><a href = "adminAddAnnouncement.xhtml">Add Announcement/Notes</a></li>
+                                <li><a href = "adminEmployeePayroll.xhtml">View/Edit Payroll</a></li>
+                                <li><a href = "adminSearchEmployee.xhtml">Search Employee Information</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a href = "aboutUsPage.xhtml">About Us</a></li>
+                        <li><a href = "contactUsPage.xhtml">Contact</a></li>
+                    </ul>
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li><a href = "logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="container">
+            <div class="col-md-8">
+                <p:panel class="text-center" header="Applicable Promotion List">
+                    <p:dataTable var="row" value="#{performanceMB.listOfPerfor}">
+                        <p:column headerText="Employee ID">
+                            <h:outputText value="#{row.empInfo.empId}" />
+                        </p:column>
+                        <p:column headerText="Employee Name">
+                            <h:outputText value="#{row.empInfo.firstname.concat(' '.concat(row.empInfo.lastname))}" />
+                        </p:column>
+                        <p:column headerText="Project Status">
+                            <h:outputText value="#{row.noOfAssignment}" />
+                        </p:column>
+                        <p:column headerText="Client Status">
+                            <h:outputText value="#{row.noOfClientDeily}" />
+                        </p:column>
+                        <p:column headerText="Leave">
+                            <h:outputText value="#{row.leave}" />
+                        </p:column>
+                        <p:column headerText="Month">
+                            <h:outputText value="#{row.month}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+            </div>
+            <div class="col-md-4">
+                <h:form>
+                    <div class="well" style="border-radius: 15px">
+                        <h4 class="panel-heading text-center head-title-bgc">Announcement Information</h4>
+                        <div class="form-group">
+                            <label for="email">Employee ID</label>
+                            <p:inputText class="form-control" value="Emp001" readonly="true"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Employee Name</label>
+                            <p:inputText class="form-control" value="Azmol Karim" readonly="true"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Purpose</label>
+                            <p:inputText class="form-control" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Salary</label>
+                            <p:inputText class="form-control" value="25000" readonly="true"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Announcement Amount</label>
+                            <p:inputText class="form-control" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Notes</label>
+                            <p:inputText class="form-control" value=""/>
+                        </div>
+                        <p:commandButton class="btn btn-info" value="Submit"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>
+

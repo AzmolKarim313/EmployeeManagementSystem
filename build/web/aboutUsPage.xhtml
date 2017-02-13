@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <!--CSS-->
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-dropdownhover.min.css"/>
+        <h:outputStylesheet library="css" name="animate.min.css"/>
+        <!--<h:outputStylesheet library="css" name="font-awesome.css"/>-->
+
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+              rel="stylesheet"  type="text/css"/>
+
+        <!--CSS Customize-->
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <!--jQuery-->
+        <h:outputScript library="js" name="jquery.min.js"/>
+
+        <!--JS-->
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+        <h:outputScript library="js" name="bootstrap-dropdownhover.min.js"/>
+
+    </h:head>
+    <h:body style="background: rgba(63, 88, 104, 0.3);">
+        <div>
+            <nav class = "navbar navbar-inverse" role = "navigation">
+
+                <div class = "navbar-header">
+                    <button type = "button" class = "navbar-toggle" 
+                            data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                        <span class = "sr-only">Toggle navigation</span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                    </button>
+
+                    <a class = "navbar-brand" href = "index.xhtml"><i class="fa fa-home fa-"></i></a>
+                </div>
+
+                <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "index.xhtml">Home</a></li>
+                        <li class = "dropdown">
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>Login Users 
+                                <b class = "caret"></b>
+                            </a>
+
+                            <ul class = "dropdown-menu">
+                                <li><a href = "adminLoginPage.xhtml">Administrator Login</a></li>
+
+                                <li class = "divider"></li>
+                                <li><a href = "empLoginPage.xhtml">Employee Login</a></li>
+                            </ul>
+
+                        </li>
+                        <li class = "active"><a href = "aboutUsPage.xhtml">About Us</a></li>
+                        <li><a href = "contactUsPage.xhtml">Contact</a></li>
+                    </ul>
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li><a href = "logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="container">
+            <h2>About the project Employee Management System</h2>
+            <p class="text-justify">The aim of our project is to develop a system that is meant to 
+                partially computerize the work performed in the Employee 
+                Management System. In this software we can add employee details 
+                according to the departments of the company. We used JSP 
+                (Java Server Pages) as front end and MySQL as back end for 
+                developing our project. This project (Employee Management System) 
+                has been developed on Java, JSP and MySQL. There are two types 
+                of users available in the project, first one is Employee and 
+                second one is Admin. Employee user have limited access right 
+                to access the system, while the admin users have full control 
+                over the system. We have used JSP for frontend logic 
+                implementation, Java for business logic, MySQL as a database, 
+                HTML for structure designing, CSS for web page formating, 
+                JavaScript for form validation and animation. Rest of the things 
+                I have listed below. I have also attached the project video and 
+                screens of this project look into it.</p>
+            <h3>Users of Employee Information System</h3>
+            <p><strong>There are two type of users available in the project (Employee 
+                    Management System) :</strong></p>
+            <ul>
+                <li>Employee : With Limited Access</li>
+                <li>Admin : With full access</li>
+            </ul>
+            <h3>Functionality performed by Employee user:</h3>
+            <p><strong>These are the functionality performed by the Employee users.</strong></p>
+            <ul>
+                <li>Login For Employee</li>
+                <li>Forgot password for Employee</li>
+                <li>Change Password for Employee</li>
+                <li>Edit Profile For Employee</li>
+                <li>Apply Leaves</li>
+                <li>Add Timesheet</li>
+                <li>View his Payment History</li>
+                <li>View his Leave Records</li>
+                <li>View his Timesheet Records</li>
+            </ul>
+            <h3>Functionality performed by admin user:</h3>
+            <p><strong>These are the functionality performed by the admin users.</strong></p>
+            <ul>
+                <li>Login For Admin</li>
+                <li>Forgot password for Admin</li>
+                <li>Edit Profile For Admin</li>
+                <li><strong>Manage Employee</strong>
+                    <ul>
+                        <li>Adding New Employee</li>
+                        <li>Edit the Exiting Employee</li>
+                        <li>View Profile of the Employee</li>
+                        <li>Listing of all Employee</li>
+                    </ul>
+                </li>
+                <li><strong>Manage Salary</strong>
+                    <ul>
+                        <li>Add Salary of the Employee</li>
+                        <li>View Details of the Salary</li>
+                        <li>Listing of all Salary</li>
+                        <li>Filter Salary according to Employee</li>
+                    </ul>
+                        
+                </li>
+                <li><strong>Manage Timesheet</strong>
+                    <ul>
+                        <li>Add Timesheet for the Employee</li>
+                        <li>Listing of the Timesheet</li>
+                        <li>Filter Timesheet according to Employee</li>
+                    </ul>
+                        
+                </li>
+                <li><strong>Manage Leave</strong>
+                    <ul>
+                        <li>Add Leave for the Employee</li>
+                        <li>Listing of the Leave</li>
+                        <li>Filter Leave according to Employee</li>
+                        <li>Approve/Disapprove Leave</li>
+                    </ul>
+                        
+                </li>
+                <li><strong>Reports of the project</strong>
+                    <ul>
+                        <li>Report of all Employee</li>
+                        <li>Report of all Salary</li>
+                        <li>Report of all Timesheet</li>
+                        <li>Report of all Leaves</li>
+                    </ul>
+                        
+                </li>
+            </ul>
+            <h3>Static Pages and other sections :</h3>
+            <p><strong>These static pages will be available in project</strong></p>
+            <ul>
+                <li>Home Page with good UI</li>
+                <li>Home Page will contain an animated slider for images banner</li>
+                <li>About us page will be available which will describe about the project</li>
+                <li>Contact us page will be available in the project</li>
+            </ul>
+            <h3>Technology Used in the project (Employee Information System)</h3>
+            <p><strong>We have developed this project using the below technology</strong></p>
+            <ul>
+                <li>HTML : Page layout has been designed in HTML</li>
+                <li>CSS : CSS has been used for all the desigining part</li>
+                <li>JavaScript : All the validation task and animations has been developed by JavaScript</li>
+                <li>Bootstrap : Bootstrap framework has been used for the desigining part</li>
+                <li>Java : All the business logic has been implemented in Java</li>
+                <li>JSF : All the front end logic has been written in JSF</li>
+                <li>Primefaces : Also the front end logic has been written in Primefaces</li>
+                <li>MySQL : MySQL database has been used as database for the project</li>
+                <li>Hibernate : Hibernate database framework has been used as database for the project</li>
+                <li>Tomcat : Project will be run over the tomcat server</li>
+            </ul>
+            <h3>Supported Operating System</h3>
+            <p><strong>We can configure this project on following operating system.</strong></p>
+            <ul>
+                <li><strong>Windows :</strong> This project can easily be 
+                    configured on windows operating system. For running this 
+                    project on Windows system, you will have to install Tomcat 7, 
+                    JDK 7, MySQL 5.</li>
+                <li><strong>Linux : </strong> 
+                        We can run this project also on all versions of Linux operating system</li>
+                <li><strong>Mac : </strong> We can also easily configured this 
+                    project on Mac operating system.</li>
+            </ul>
+        </div>
+    </h:body>
+</html>
+

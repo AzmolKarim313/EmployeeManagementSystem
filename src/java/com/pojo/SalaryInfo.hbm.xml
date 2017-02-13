@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.SalaryInfo" table="salary_info" catalog="employee_management_db" optimistic-lock="version">
+        <id name="salaryId" type="int">
+            <column name="salary_id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empInfo" class="com.pojo.EmpInfo" fetch="select">
+            <column name="emp_id" length="9" />
+        </many-to-one>
+        <property name="regularSalary" type="java.lang.Float">
+            <column name="regular_salary" precision="12" scale="0" />
+        </property>
+        <property name="totalSalary" type="java.lang.Float">
+            <column name="total_salary" precision="12" scale="0" />
+        </property>
+        <property name="paymentMethod" type="string">
+            <column name="payment_method" length="45" />
+        </property>
+        <property name="month" type="string">
+            <column name="month" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.DesignationTable" table="designation_table" catalog="employee_management_db" optimistic-lock="version">
+        <id name="degId" type="int">
+            <column name="deg_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="designationName" type="string">
+            <column name="designation_name" length="45" />
+        </property>
+        <property name="gread" type="string">
+            <column name="gread" length="2" />
+        </property>
+        <property name="salary" type="java.lang.Float">
+            <column name="salary" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <!--CSS-->
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-theme.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-dropdownhover.min.css"/>
+        <h:outputStylesheet library="css" name="animate.min.css"/>
+        <!--<h:outputStylesheet library="css" name="font-awesome.css"/>-->
+
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+              rel="stylesheet"  type="text/css"/>
+
+        <!--CSS Customize-->
+        <h:outputStylesheet library="css" name="style.css"/>
+
+        <!--jQuery-->
+        <!--<h:outputScript library="js" name="jquery.min.js"/>-->
+
+        <!--JS-->
+        <h:outputScript library="js" name="bootstrap.min.js"/>
+        <h:outputScript library="js" name="bootstrap-dropdownhover.min.js"/>
+
+    </h:head>
+    <h:body>
+        <div>
+            <nav class = "navbar navbar-inverse" role = "navigation">
+
+                <div class = "navbar-header">
+                    <button type = "button" class = "navbar-toggle" 
+                            data-toggle = "collapse" data-target = "#example-navbar-collapse">
+                        <span class = "sr-only">Toggle navigation</span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                        <span class = "icon-bar"></span>
+                    </button>
+
+                    <a class = "navbar-brand" href = "index.xhtml"><i class="fa fa-home fa-"></i></a>
+                </div>
+
+                <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+
+                    <ul class = "nav navbar-nav">
+                        <li><a href = "index.xhtml">Home</a></li>
+                        <li class = "dropdown active">
+                            <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">
+                                <i class="fa fa-user" aria-hidden="true"></i> Employee Menu 
+                                <b class = "caret"></b>
+                            </a>
+
+                            <ul class = "dropdown-menu">
+                                <li><a href = "empViewProfile.xhtml">My Profile</a></li>
+                                <li><a href = "empEditProfile.xhtml">Edit Profile</a></li>
+                                <li><a href = "empCngPwd.xhtml">Change Password</a></li>
+                                <li><a href = "empApplyLeave.xhtml">Apply for Leave</a></li>
+                                <li><a href = "empViewSalary.xhtml">View Salary</a></li>
+                            </ul>
+
+                        </li>
+                        <li><a href = "aboutUsPage.xhtml">About Us</a></li>
+                        <li><a href = "contactUsPage.xhtml">Contact</a></li>
+                    </ul>
+                    <ul class = "nav navbar-nav navbar-right">
+                        <li><a href = "logout.jsp"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+        <div class="container">
+            <h:form class="form-horizontal">
+                <div class="col-md-offset-2 col-md-6">
+                    <div class="well" style="border-radius: 25px;">
+                        <h4 class="panel-heading head-title-bgc">My Information</h4>
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Employee ID"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="Emp001" readonly="true"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="First Name"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="Azmol"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Last Name"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="Karim"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Gender"/>
+                            <div class="col-md-8">
+                                <h:selectOneRadio class="form-control" value="">
+                                    <f:selectItem itemLabel="Male" itemValue="Male" />
+                                    <f:selectItem itemLabel="Female" itemValue="Female" />
+                                    <f:selectItem itemLabel="Others" itemValue="Others" />
+                                </h:selectOneRadio>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Date of Birth"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="10-NOV-1990"  readonly="true"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Nationality"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="Bangladeshi"  readonly="true"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Email"/>
+                            <div class="col-md-8">
+                                <p:inputText class="form-control" value="azmol@gmail.com"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Contact No."/>
+                            <div class="col-md-8">
+                                <p:inputMask class="form-control" mask="+880 9999 999999" value="+880 1936 835834"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p:outputLabel class="col-md-4 control-label" value="Mailling Address"/>
+                            <div class="col-md-8">
+                                <p:inputTextarea class="form-control" value="Jessore"/>
+                            </div>
+                        </div>
+                        <p:commandButton class="btn btn-info col-md-offset-5" value="Update Profile"/>
+                    </div>
+                </div>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

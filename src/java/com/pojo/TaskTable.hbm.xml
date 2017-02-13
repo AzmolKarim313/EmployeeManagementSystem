@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.TaskTable" table="task_table" catalog="employee_management_db" optimistic-lock="version">
+        <id name="taskId" type="string">
+            <column name="task_id" length="45" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="empInfo" class="com.pojo.EmpInfo" fetch="select">
+            <column name="emp_id" length="9" />
+        </many-to-one>
+        <property name="taskTitle" type="string">
+            <column name="task_title" length="450" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="start_date" length="10" />
+        </property>
+        <property name="endDate" type="date">
+            <column name="end_date" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

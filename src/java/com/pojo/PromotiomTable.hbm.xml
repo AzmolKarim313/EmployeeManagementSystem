@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.PromotiomTable" table="promotiom_table" catalog="employee_management_db" optimistic-lock="version">
+        <id name="promotionId" type="java.lang.Integer">
+            <column name="promotion_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empInfo" class="com.pojo.EmpInfo" fetch="select">
+            <column name="emp_id" length="9" />
+        </many-to-one>
+        <property name="promotionDate" type="date">
+            <column name="promotion_date" length="10" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

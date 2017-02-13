@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2016 8:49:38 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.pojo.LeaveInfo" table="leave_info" catalog="employee_management_db" optimistic-lock="version">
+        <id name="leaveId" type="java.lang.Integer">
+            <column name="leave_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="empInfo" class="com.pojo.EmpInfo" fetch="select">
+            <column name="emp_id" length="9" />
+        </many-to-one>
+        <property name="reason" type="string">
+            <column name="reason" length="45" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="from_date" length="10" />
+        </property>
+        <property name="toDate" type="date">
+            <column name="to_date" length="10" />
+        </property>
+        <property name="noOfDate" type="java.lang.Integer">
+            <column name="noOfDate" />
+        </property>
+    </class>
+</hibernate-mapping>
